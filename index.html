@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sonay &hearts; Ceren</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let clicked = false;
+        ClickHandle = () => {
+            var x = document.getElementById("myAudio");
+            if (clicked == false) {
+                x.play();
+                clicked = true;
+            } else {
+                x.pause();
+                clicked = false;
+            }
+            let h1 = document.getElementById("h1");
+            h1.classList.toggle("text-red-500");
+
+            let p1 = document.getElementById("p1");
+            p1.classList.toggle("text-gray-100");
+
+            let p2 = document.getElementById("p2");
+            p2.classList.toggle("text-gray-100");
+
+            let sikis = document.getElementById("sikis");
+            sikis.classList.toggle("bottom-0");
+        }
+    </script>
+</head>
+
+<body class="bg-gray-900">
+
+    <div class="w-screen h-screen flex flex-col lg:flex-row items-center justify-evenly">
+        <p class="text-gray-900 hover:text-gray-400 transition-all" id="p1">Son aşkımdır bu -sen- ve son çile,<br>
+            Günümün son fecri, sonu artık;<br>
+            Giriver inince gün, aralık<br>
+            Kapımdan gelinlik elbisenle<br>
+            Onu sevmekle geç, ey yaşamak!</p>
+        <h1 onclick="clickHandler" id="h1"
+            class="text-gray-900 md:text-7xl sm:text-6xl text-5xl  transition-all">Ceren &hearts;
+            Sonay</h1>
+        <p class="text-gray-900 transition-all" id="p2">Son aşkımdır bu -sen- ve son çile,<br>
+            Günümün son fecri, sonu artık;<br>
+            Giriver inince gün, aralık<br>
+            Kapımdan gelinlik elbisenle<br>
+            Onu sevmekle geç, ey yaşamak!</p>
+    </div>
+    <div>
+        <button onclick="ClickHandle()"
+        id="sikis"
+            class="fixed bottom-1/2 py-5 bg-red-500 text-4xl text-white w-full mx-auto transition-all rounded-full w-full ">Love Me</button>
+    </div>
+
+    <div class="fixed bottom-1 right-1"><a href="https://zukrein.me" target="_blank"
+            class="text-gray-300 text-sm">powered by
+            zukrein and endw</a></div>
+    <div class="block">
+        <audio id="myAudio">
+            <source src="./isabel.ogg#t=00:00:12" type="audio/ogg">
+            <source src="./isabel.mp3#t=00:00:12" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</body>
+
+</html>
